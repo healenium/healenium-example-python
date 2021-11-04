@@ -8,7 +8,7 @@ Python 3.9.5 + Pytest project with healenium usage example
 
 ```docker-compose up -d```
 
-Verify that images ```healenium/hlm-backend:3.1.2```, ```postgres:11-alpine```, ```healenium/hlm-selector-imitator:1```, ```healenium/hlm-selenium-4-standalone-xpra``` and ```healenium/hlm-proxy``` are up and running
+Verify that images ```healenium/hlm-backend```, ```postgres:11-alpine```, ```healenium/hlm-selector-imitator```, ```healenium/hlm-selenium-4-standalone-xpra``` and ```healenium/hlm-proxy``` are up and running
 
 ### 2. Project structure
 ```
