@@ -18,11 +18,11 @@ services:
 
   healenium:
     image: healenium/hlm-backend:3.1.5
+    container_name: healenium
     ports:
       - "7878:7878"
     links:
       - db
-    restart: always
     environment:
       - SPRING_CONTAINER_NAME=healenium
       - SPRING_POSTGRES_DB=healenium
@@ -34,6 +34,7 @@ services:
 
   selector-imitator:
     image: healenium/hlm-selector-imitator:1
+    container_name: selector-imitator
     restart: on-failure
     ports:
       - "8000:8000"
@@ -66,4 +67,3 @@ services:
 
 networks:
   healenium:
-#    driver: bridge
