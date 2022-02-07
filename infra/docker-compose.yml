@@ -1,5 +1,4 @@
-version: "3.9"
-
+version: "3.3"
 services:
 
   db:
@@ -18,7 +17,6 @@ services:
 
   healenium:
     image: healenium/hlm-backend:3.2.0
-    container_name: healenium
     ports:
       - "7878:7878"
     links:
@@ -46,8 +44,6 @@ services:
     container_name: hlm-proxy
     ports:
       - "8085:8085"
-    volumes:
-      - docker-log-volume:/var/log/dockerlogs
     environment:
       - "recovery-tries=1"
       - "score-cap=.6"
@@ -58,24 +54,15 @@ services:
     networks:
       - healenium
 
-  hlm-selenium-3-standalone-tigervnc:
-    #    image: healenium/hlm-selenium-4-standalone-xpra:0.1.1       #для версии XPRA селениум 4.0.0-rc-1
-    #image: healenium/hlm-selenium-4-standalone-xpra:1.0
-    image: healenium/hlm-selenium-3-standalone-tigervnc:0.1.0    #для версии vnc селениум 3.141.59
-
+  hlm-selenium-webview:
+    image: healenium/hlm-selenium-3-standalone-tigervnc:0.1.1
     restart: on-failure
-    container_name: hlm-selenium-3-standalone-tigervnc
+    container_name: hlm-selenium-webview
     ports:
-      - "4444:4444"
       - "8086:6080"
-    #      - "8086:10000"
-    volumes:
-      - docker-log-volume:/var/log/dockerlogs
+      - "4444:4444"
     networks:
       - healenium
-
-volumes:
-  docker-log-volume:
 
 networks:
   healenium:
