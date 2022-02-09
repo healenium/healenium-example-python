@@ -42,6 +42,8 @@ services:
   hlm-proxy:
     image: healenium/hlm-proxy:0.2.1
     container_name: hlm-proxy
+    volumes:
+      - docker-log-volume:/var/log/dockerlogs
     ports:
       - "8085:8085"
     environment:
@@ -61,8 +63,13 @@ services:
     ports:
       - "8086:6080"
       - "4444:4444"
+    volumes:
+      - docker-log-volume:/var/log/dockerlogs
     networks:
       - healenium
+
+volumes:
+  docker-log-volume:
 
 networks:
   healenium:
