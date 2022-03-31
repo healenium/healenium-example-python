@@ -13,11 +13,5 @@ class Test_Base():
             desired_capabilities=webdriver.DesiredCapabilities.CHROME,
             options=options)
 
-        # options = webdriver.FirefoxOptions()
-        # browser = webdriver.Remote(
-        #     command_executor="http://localhost:4444/wd/hub/",
-        #     desired_capabilities=webdriver.DesiredCapabilities.FIREFOX,
-        #     options=options)
-
     def teardown_method(self, method):
         self.driver.quit()

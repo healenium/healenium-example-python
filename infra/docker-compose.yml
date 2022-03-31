@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.9"
 services:
 
   db:
@@ -16,7 +16,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.2.0
+    image: healenium/hlm-backend:3.2.1
     ports:
       - "7878:7878"
     links:
@@ -40,7 +40,7 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:0.2.1
+    image: healenium/hlm-proxy:0.2.4
     container_name: hlm-proxy
     volumes:
       - docker-log-volume:/var/log/dockerlogs
@@ -50,14 +50,14 @@ services:
       - "recovery-tries=1"
       - "score-cap=.6"
       - "heal-enabled=true"
-      - "serverHost=localhost"
-      - "serverPort=7878"
-      - "imitatePort=8000"
+#      - SELENIUM_HOST=hlm-selenium-webview
+#      - HEALENIUM_HOST=healenium
+#      - IMITATE_HOST=selector-imitator
     networks:
       - healenium
 
   hlm-selenium-webview:
-    image: healenium/hlm-selenium-3-standalone-tigervnc:0.1.1
+    image: healenium/hlm-selenium-3-standalone-tigervnc:firefox98.0.2_chrome99.0.4844.84_edge99.0.1150.5599
     restart: on-failure
     container_name: hlm-selenium-webview
     ports:
