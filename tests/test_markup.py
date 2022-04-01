@@ -1,3 +1,5 @@
+from selenium import webdriver
+
 from src.main.pages.markup_page import *
 from src.main.pages.testenv_page import TestEnvPage
 from test_base import TestBase
