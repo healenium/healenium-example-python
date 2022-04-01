@@ -16,7 +16,7 @@ Create /db/sql folder on the same level in your project. Add init.sql file into 
 
 ```$ curl https://raw.githubusercontent.com/healenium/healenium-client/master/example/init.sql -o init.sql```
 
-Verify that images ```healenium/hlm-backend:3.2.0```, ```postgres:11-alpine```, ```healenium/hlm-selector-imitator```, ```healenium/hlm-selenium-4-standalone-xpra``` and ```healenium/hlm-proxy:0.2.1``` are up and running
+Verify that images ```healenium/hlm-backend:3.2.1```, ```postgres:11-alpine```, ```healenium/hlm-selector-imitator:1.1```, ```healenium/hlm-proxy``` are up and running
 
 ### 2. Project structure
 ```

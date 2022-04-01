@@ -3,13 +3,13 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 
 from src.main.locators.markup_locators import *
-from src.main.pages.base_page import Base_Page
+from src.main.pages.base_page import BasePage
 
 
-class Markup_Page(Base_Page):
+class MarkupPage(BasePage):
 
     def open_browser(self):
-        self.driver.get(Base_Page.mainPageUrl);
+        self.driver.get(BasePage.mainPageUrl)
         return self
 
     def generate_markup(self):
@@ -26,13 +26,13 @@ class Markup_Page(Base_Page):
     def test_button_id_enabled(self):
         try:
             return self.driver.find_element_by_id(Locators.test_generated_button).is_enabled()
-        except(NoSuchElementException):
+        except NoSuchElementException:
             return False
 
     def displayed_text(self):
         try:
             return self.driver.find_element_by_xpath(Locators.text_first_select).is_enabled()
-        except(NoSuchElementException):
+        except NoSuchElementException:
             return False
 
     def select_first_checkbox(self):
@@ -42,10 +42,10 @@ class Markup_Page(Base_Page):
         return self.driver.find_element_by_xpath(Locators.checkbox_account).is_enabled()
 
 
-class Markup_Page_By(Base_Page):
+class MarkupPageBy(BasePage):
 
     def open_browser(self):
-        self.driver.get(Base_Page.mainPageUrl);
+        self.driver.get(BasePage.mainPageUrl)
         return self
 
     def generate_markup(self):
@@ -68,14 +68,14 @@ class Markup_Page_By(Base_Page):
             WebDriverWait(self.driver, 5).until(
                 expected_conditions.invisibility_of_element(*Locators_By.button_invisible))
             return True
-        except (Exception):
+        except Exception:
             return False
 
 
-class Markup_Page_Request(Base_Page):
+class MarkupPageRequest(BasePage):
 
     def open_browser(self):
-        self.driver.get(Base_Page.mainPageUrl)
+        self.driver.get(BasePage.mainPageUrl)
         return self
 
     def generate_markup(self):
