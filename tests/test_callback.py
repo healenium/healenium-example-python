@@ -18,4 +18,3 @@ class TestCallback(TestBase):
         callback_page.click_update_square_button()
         result = callback_page.verify_square_element()  # should be healed
         assert result == True
-        driver.quit()
