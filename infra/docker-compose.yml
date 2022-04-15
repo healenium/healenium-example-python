@@ -16,7 +16,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.2.1
+    image: healenium/hlm-backend:3.2.2
     ports:
       - "7878:7878"
     links:
@@ -31,7 +31,7 @@ services:
       - healenium
 
   selector-imitator:
-    image: healenium/hlm-selector-imitator:1
+    image: healenium/hlm-selector-imitator:1.1
     container_name: selector-imitator
     restart: on-failure
     ports:
@@ -40,7 +40,7 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:0.2.4
+    image: healenium/hlm-proxy:0.2.5
     container_name: hlm-proxy
     volumes:
       - docker-log-volume:/var/log/dockerlogs
@@ -57,7 +57,7 @@ services:
       - healenium
 
   hlm-selenium-webview:
-    image: healenium/hlm-selenium-3-standalone-tigervnc:firefox98.0.2_chrome99.0.4844.84_edge99.0.1150.5599
+    image: healenium/hlm-selenium-4-standalone-tigervnc:firefox98.0.1_chrome99.0.4844.82_edge99.0.1150.46
     restart: on-failure
     container_name: hlm-selenium-webview
     ports:
