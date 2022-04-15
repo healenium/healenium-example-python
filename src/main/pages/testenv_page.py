@@ -24,3 +24,9 @@ class TestEnvPage(BasePage):
     def click_submit_btn(self):
         self.driver.find_element_by_id('Submit').click()
         return self
+
+    def select_checkboxes_under_parent(self):
+        checkboxes = self.driver.find_element(By.XPATH, "//*[contains(@class,'test-form')]").find_elements(By.XPATH, ".//*[@class='input1']")
+        for ch in checkboxes:
+            ch.click()
+        return self

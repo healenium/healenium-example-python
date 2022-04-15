@@ -27,6 +27,14 @@ class TestMarkup(TestBase):
         test_page.click_form_submit_btn()
         test_page.select_checkboxes()  # should be healed
 
+    def test_select_checkboxes_under_parent(self, setup_method):
+        test_page = TestEnvPage(self.driver)
+
+        test_page.open_browser()
+        test_page.select_checkboxes_under_parent()
+        test_page.click_form_submit_btn()
+        test_page.select_checkboxes_under_parent()
+
     def test_button_click_with_id(self, setup_method):
         test_page = TestEnvPage(self.driver)
 
