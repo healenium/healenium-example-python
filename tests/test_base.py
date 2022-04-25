@@ -13,6 +13,7 @@ class TestBase:
             command_executor="http://localhost:8085",
             desired_capabilities=webdriver.DesiredCapabilities.CHROME,
             options=options)
+
         return self.driver
 
     def teardown_method(self, method):
