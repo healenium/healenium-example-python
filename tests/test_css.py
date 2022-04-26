@@ -1,10 +1,24 @@
+import pytest
+from selenium import webdriver
+
 from src.main.constants.locator_type import LocatorType
 from src.main.pages.callback_page import CallbackPage
 from src.main.pages.testenv_page import TestEnvPage
 from tests.test_base import TestBase
 
 
-class TestCss(TestBase):
+class TestCss:
+
+    @pytest.fixture()
+    def setup_method(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
+        return self.driver
 
     def test_css_attribute(self, setup_method):
         self.driver = setup_method
@@ -81,3 +95,6 @@ class TestCss(TestBase):
         test_page.find_test_element(LocatorType.css, ".test_class")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, ".test_class")
+
+    def teardown_method(self):
+        self.driver.quit()
