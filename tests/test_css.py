@@ -9,7 +9,7 @@ from tests.test_base import TestBase
 
 class TestCss:
 
-    def test_css_attribute(self, setup_method):
+    def test_css_attribute(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -30,7 +30,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_id(self, setup_method):
+    def test_css_id(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -47,7 +47,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_id_special_character(self, setup_method):
+    def test_css_id_special_character(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -64,7 +64,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_element(self, setup_method):
+    def test_css_element(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -81,7 +81,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_disabled(self, setup_method):
+    def test_css_disabled(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -98,7 +98,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_enabled(self, setup_method):
+    def test_css_enabled(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -115,7 +115,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_checked(self, setup_method):
+    def test_css_checked(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
@@ -132,7 +132,7 @@ class TestCss:
 
         self.driver.quit()
 
-    def test_css_class_name(self, setup_method):
+    def test_css_class_name(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
