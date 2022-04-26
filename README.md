@@ -43,7 +43,7 @@ To run tests in terminal with pytest you need to go to execute next comands:
 
 ``python -m pytest ./tests/``
 
-> If you want to execute tests from test_callback.py file, please use the command: ```python -m pytest ./tests/test_css.py```
+> If you want to execute tests from specified file, please use the command: ```python -m pytest ./tests/test_css.py```
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 4. Monitoring tests running
