@@ -38,83 +38,76 @@ class TestCss:
 
         test_page.close()
 
-    def test_css_id_special_character(self):
-        test_page = TestEnvPage()
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, "input#change\\:name")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, "input#change\\:name")
-
-        test_page.close()
-
-    def test_css_element(self):
-        test_page = TestEnvPage()
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, "test_tag")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, "test_tag")
-
-        test_page.close()
-
-    def test_css_disabled(self):
-        test_page = TestEnvPage()
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, "input:disabled")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, "input:disabled")
-
-        test_page.close()
-
-    def test_css_enabled(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('--no-sandbox')
-        options.add_argument("--disable-dev-shm-usage")
-        self.driver = webdriver.Remote(
-            command_executor="http://localhost:8085",
-            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-            options=options)
-        test_page = TestEnvPage(self.driver)
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, "textarea:enabled")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, "textarea:enabled")
-
-        self.driver.quit()
-
-    def test_css_checked(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('--no-sandbox')
-        options.add_argument("--disable-dev-shm-usage")
-        self.driver = webdriver.Remote(
-            command_executor="http://localhost:8085",
-            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-            options=options)
-        test_page = TestEnvPage(self.driver)
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, "input:checked")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, "input:checked")
-
-        self.driver.quit()
-
-    def test_css_class_name(self):
-        options = webdriver.ChromeOptions()
-        options.add_argument('--no-sandbox')
-        options.add_argument("--disable-dev-shm-usage")
-        self.driver = webdriver.Remote(
-            command_executor="http://localhost:8085",
-            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-            options=options)
-        test_page = TestEnvPage(self.driver)
-
-        test_page.open_browser()
-        test_page.find_test_element(LocatorType.css, ".test_class")
-        test_page.click_submit_btn()
-        test_page.find_test_element(LocatorType.css, ".test_class")
-
-        self.driver.quit()
+    # def test_css_id_special_character(self):
+    #     test_page = TestEnvPage()
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, "input#change\\:name")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, "input#change\\:name")
+    #
+    #     test_page.close()
+    #
+    # def test_css_element(self):
+    #     test_page = TestEnvPage()
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, "test_tag")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, "test_tag")
+    #
+    #     test_page.close()
+    #
+    # def test_css_disabled(self):
+    #     test_page = TestEnvPage()
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, "input:disabled")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, "input:disabled")
+    #
+    #     test_page.close()
+    #
+    # def test_css_enabled(self):
+    #     test_page = TestEnvPage()
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, "textarea:enabled")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, "textarea:enabled")
+    #
+    #     test_page.close()
+    #
+    # def test_css_checked(self):
+    #     options = webdriver.ChromeOptions()
+    #     options.add_argument('--no-sandbox')
+    #     options.add_argument("--disable-dev-shm-usage")
+    #     self.driver = webdriver.Remote(
+    #         command_executor="http://localhost:8085",
+    #         desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+    #         options=options)
+    #     test_page = TestEnvPage(self.driver)
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, "input:checked")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, "input:checked")
+    #
+    #     self.driver.quit()
+    #
+    # def test_css_class_name(self):
+    #     options = webdriver.ChromeOptions()
+    #     options.add_argument('--no-sandbox')
+    #     options.add_argument("--disable-dev-shm-usage")
+    #     self.driver = webdriver.Remote(
+    #         command_executor="http://localhost:8085",
+    #         desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+    #         options=options)
+    #     test_page = TestEnvPage(self.driver)
+    #
+    #     test_page.open_browser()
+    #     test_page.find_test_element(LocatorType.css, ".test_class")
+    #     test_page.click_submit_btn()
+    #     test_page.find_test_element(LocatorType.css, ".test_class")
+    #
+    #     self.driver.quit()
