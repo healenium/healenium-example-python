@@ -2,9 +2,7 @@
 Python 3.9.5 + Pytest project with healenium usage example 
 
 ## How to start
-### 1.Start Healenium backend from 'infra' folder
-
-```cd infra```
+### 1.Start Healenium backend from 'root' folder
 
 ```docker-compose up -d```
 
@@ -23,21 +21,30 @@ Verify that images ```healenium/hlm-backend:3.2.1```, ```postgres:11-alpine```, 
 |__healenium-example-python (root)
 	|__src
         |__main
-            |__locators
+            |__constants
             |__pages
+            |__search
     |__tests
         |__selenium tests
-   |__infra
-      |__docker-compose.yml
+    |__docker-compose.yml
 
 ``` 
 			   
 ### 3.Run test
-To run tests in terminal with pytest you need to go to ```cd healenium_selenium\tests``` project folder
+To run tests in terminal with pytest you need to go to execute next comands:
 
-> If you want to execute tests from test_callback.py file, please use the command: ```pytest test_callback.py```
-> And appropriate command for test_markup.py file: ```pytest test_markup.py```
->> In case you want to run all tests in project use ```pytest``` command
+``python3 -m venv env``
+
+``source ./env/bin/activate``
+
+``python -m pip install -U pytest``
+
+``python -m pip install -U selenium``
+
+``python -m pytest ./tests/``
+
+> If you want to execute tests from test_callback.py file, please use the command: ```python -m pytest ./tests/test_css.py```
+>> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 4. Monitoring tests running
 You can monitor tests running. To do this go to ```http://<remote webdriver host>:8086```
