@@ -9,19 +9,14 @@ from tests.test_base import TestBase
 
 class TestCss:
 
-    @pytest.fixture()
-    def setup_method(self):
+    def test_css_attribute(self, setup_method):
         options = webdriver.ChromeOptions()
         options.add_argument('--no-sandbox')
         options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Remote(
-            command_executor="http://10.6.223.91:8085",
+            command_executor="http://localhost:8085",
             desired_capabilities=webdriver.DesiredCapabilities.CHROME,
             options=options)
-        return self.driver
-
-    def test_css_attribute(self, setup_method):
-        self.driver = setup_method
         callback_page = CallbackPage(self.driver)
 
         callback_page.open_browser()
@@ -33,62 +28,118 @@ class TestCss:
         result = callback_page.verify_square_element()  # should be healed
         assert result == True
 
+        self.driver.quit()
+
     def test_css_id(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "#change_id")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "#change_id")
+
+        self.driver.quit()
 
     def test_css_id_special_character(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "input#change\\:name")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "input#change\\:name")
+
+        self.driver.quit()
 
     def test_css_element(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "test_tag")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "test_tag")
+
+        self.driver.quit()
 
     def test_css_disabled(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "input:disabled")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "input:disabled")
+
+        self.driver.quit()
 
     def test_css_enabled(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "textarea:enabled")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "textarea:enabled")
+
+        self.driver.quit()
 
     def test_css_checked(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
         test_page.find_test_element(LocatorType.css, "input:checked")
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, "input:checked")
+
+        self.driver.quit()
 
     def test_css_class_name(self, setup_method):
-        self.driver = setup_method
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+            options=options)
         test_page = TestEnvPage(self.driver)
 
         test_page.open_browser()
@@ -96,5 +147,4 @@ class TestCss:
         test_page.click_submit_btn()
         test_page.find_test_element(LocatorType.css, ".test_class")
 
-    def teardown_method(self):
         self.driver.quit()
