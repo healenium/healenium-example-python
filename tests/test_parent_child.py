@@ -1,5 +1,3 @@
-from selenium import webdriver
-
 from src.main.constants.locator_type import LocatorType
 from src.main.pages.testenv_page import TestEnvPage
 
@@ -16,17 +14,15 @@ class TestParentChild:
 
         test_page.close()
 
-    # def test_parent_xpath(self, setup_method):
-    #     # "parent::"
-    #     self.driver = setup_method
-    #     testenv_page = TestEnvPage(self.driver)
-    #
-    #     testenv_page.open_browser()
-    #     testenv_page.find_test_element(LocatorType.xpath, "")
-    #     testenv_page.click_submit_btn()
-    #     testenv_page.find_test_element(LocatorType.xpath, "")
-    #
-    #     self.driver.quit()
+    def test_parent_xpath(self):
+        testenv_page = TestEnvPage()
+
+        testenv_page.open_browser()
+        testenv_page.find_test_element(LocatorType.xpath, "(//*[@class='input1']//parent::*[contains(@class, 'input1')])[8]")
+        testenv_page.click_submit_btn()
+        testenv_page.find_test_element(LocatorType.xpath, "(//*[@class='input1']//parent::*[contains(@class, 'input1')])[8]")
+
+        testenv_page.close()
 
     def test_css_first_child(self):
         testenv_page = TestEnvPage()

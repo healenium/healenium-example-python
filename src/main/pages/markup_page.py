@@ -1,4 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 
 from src.main.pages.base_page import BasePage
 
@@ -35,3 +38,8 @@ class MarkupPage(BasePage):
 
     def close(self):
         self.driver.quit()
+
+    def click_test_button_wait(self, seconds):
+        test_btn = WebDriverWait(self.driver, seconds).until(ec.visibility_of_element_located((By.XPATH, "//*[contains(@class, 'default-btn')]")))
+        test_btn.click()
+
