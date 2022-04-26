@@ -21,7 +21,6 @@ class TestEnvPage(BasePage):
             command_executor="http://localhost:8085",
             desired_capabilities=webdriver.DesiredCapabilities.CHROME,
             options=options)
-        # self.driver=webdriver.Chrome()
 
     def open_browser(self):
         self.driver.get(BasePage.testEnvPageUrl)
