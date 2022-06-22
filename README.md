@@ -14,7 +14,7 @@ Create /db/sql folder on the same level in your project. Add init.sql file into 
 
 ```$ curl https://raw.githubusercontent.com/healenium/healenium-client/master/example/init.sql -o init.sql```
 
-Verify that images ```healenium/hlm-backend:3.2.1```, ```postgres:11-alpine```, ```healenium/hlm-selector-imitator:1.1```, ```healenium/hlm-proxy``` are up and running
+Verify that images ```healenium/hlm-backend:3.2.2```, ```postgres:14.2-bullseye```, ```healenium/hlm-selector-imitator:1.1```, ```healenium/hlm-proxy``` are up and running
 
 ### 2. Project structure
 ```
@@ -47,4 +47,4 @@ To run tests in terminal with pytest you need to go to execute next comands:
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 4. Monitoring tests running
-You can monitor tests running. To do this go to ```http://<remote webdriver host>:8086```
+You can monitor tests running. To do this go to ```http://localhost:8080```
