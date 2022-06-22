@@ -6,7 +6,7 @@ Python 3.9.5 + Pytest project with healenium usage example
 
 ```docker-compose up -d```
 or
-```docker compose -f docker-compose-selenium-v3.yaml up -d```
+```docker-compose -f docker-compose-selenium-v3.yaml up -d```
 
 To download this file into your project use this command:
 
