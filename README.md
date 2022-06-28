@@ -30,7 +30,7 @@ Create <b>/db/sql</b> folder on the same level in your project.</br>
 Verify the next images are <b>UP</b> and <b>Running</b>
 <pre>
     * postgres:14.2-bullseye
-    * healenium/hlm-backend:3.2.2
+    * healenium/hlm-backend:3.2.3
     * healenium/hlm-selector-imitator:1.1
     * healenium/hlm-proxy:1.0.0
     * healenium/hlm-selenoid:0.1.0
