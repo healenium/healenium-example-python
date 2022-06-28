@@ -47,10 +47,10 @@ Verify the next images are <b>UP</b> and <b>Running</b>
         |__docker-compose.yaml
         |__docker-compose-selenium-v3.yaml
 	|__src
-        |__main
-            |__constants
-            |__pages
-            |__search
+            |__main
+                |__constants
+                |__pages
+                |__search
     |__tests
         |__test_css.py
         |__test_general.py
