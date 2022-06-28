@@ -3,37 +3,66 @@ Python 3.9.5 + Pytest project with healenium usage example
 
 ## How to start
 ### 1.Start Healenium backend from 'root' folder
+```cd infra``` </br></br>
+To work with Healenium and Selenoid plus Selenoid Ui, use:</br>
+<pre>
+    <b>docker-compose up -d</b>
 
-```docker-compose up -d```
-or
-```docker-compose -f docker-compose-selenium-v3.yaml up -d```
+    To download docker-compose.yaml file into your project use this command:
 
-To download this file into your project use this command:
+    <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose.yaml -o docker-compose.yaml</b>
+</pre>
+To work with Healenium and standard Selenium hub with nodes, use:</br>
+<pre>
+    <b>docker-compose -f docker-compose-selenium-v3.yaml up -d</b>
 
-```$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose.yml -o docker-compose.yml```
+    To download docker-compose.yaml file into your project use this command:
 
-Create /db/sql folder on the same level in your project. Add init.sql file into ```./db/sql/init.sql``` folder in your project via command:
+    <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose-selenium-v3.yaml -o docker-compose-selenium-v3.yaml</b>
+</pre>
 
-```$ curl https://raw.githubusercontent.com/healenium/healenium-client/master/example/init.sql -o init.sql```
+Create <b>/db/sql</b> folder on the same level in your project.</br>
+<pre>
+    Add init.sql file into ./db/sql/init.sql folder in your project via command:
 
-Verify that images ```healenium/hlm-backend:3.2.2```, ```postgres:14.2-bullseye```, ```healenium/hlm-selector-imitator:1.1```, ```healenium/hlm-proxy``` are up and running
+    <b>$ curl https://raw.githubusercontent.com/healenium/healenium/master/db/sql/init.sql -o init.sql</b>
+</pre>
+Verify the next images are <b>UP</b> and <b>Running</b>
+<pre>
+    * postgres:14.2-bullseye
+    * healenium/hlm-backend:3.2.2
+    * healenium/hlm-selector-imitator:1.1
+    * healenium/hlm-proxy:1.0.0
+    * healenium/hlm-selenoid:0.1.0
+    * aerokube/selenoid-ui:1.10.5
+</pre>
 
 ### 2. Project structure
 ```
 |__healenium-example-python (root)
+    |__infra
+        |__db
+            |__sql
+                |__init.sql
+        |__docker-compose.yaml
+        |__docker-compose-selenium-v3.yaml
 	|__src
         |__main
             |__constants
             |__pages
             |__search
     |__tests
-        |__selenium tests
-    |__docker-compose.yml
+        |__test_css.py
+        |__test_general.py
+        |__test_parent_child.py
+        |__test_semantic.py
+        |__test_wait.py
+        |__test_xpath.py
 
-``` 
+```
 			   
 ### 3.Run test
-To run tests in terminal with pytest you need to go to execute next comands:
+To run tests in terminal with pytest you need to go to execute next commands:
 
 ``python3 -m venv env``
 
@@ -49,4 +78,7 @@ To run tests in terminal with pytest you need to go to execute next comands:
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 4. Monitoring tests running
-You can monitor tests running. To do this go to ```http://localhost:8080```
+You can monitor tests running if you using Healenium with Selenoid plus Selenoid Ui, use:</br>
+<pre>
+    go to <b>http://localhost:8080</b>
+</pre>
