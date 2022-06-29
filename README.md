@@ -27,7 +27,7 @@ Create <b>/db/sql</b> folder on the same level in your project.</br>
 
     <b>$ curl https://raw.githubusercontent.com/healenium/healenium/master/db/sql/init.sql -o init.sql</b>
 </pre>
-Verify the next images are <b>UP</b> and <b>Running</b>
+Verify the next images are <b>Up</b> and <b>Running</b>
 <pre>
     * postgres:14.2-bullseye
     * healenium/hlm-backend:3.2.3
