@@ -16,7 +16,7 @@ To work with Healenium and standard Selenium hub with nodes, use:</br>
 <pre>
     <b>docker-compose -f docker-compose-selenium-v3.yaml up -d</b>
 
-    To download docker-compose.yaml file into your project use this command:
+    To download docker-compose-selenium-v3.yaml file into your project use this command:
 
     <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose-selenium-v3.yaml -o docker-compose-selenium-v3.yaml</b>
 </pre>
