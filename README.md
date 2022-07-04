@@ -11,6 +11,17 @@ To work with Healenium and Selenoid plus Selenoid Ui, use:</br>
     To download docker-compose.yaml file into your project use this command:
 
     <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose.yaml -o docker-compose.yaml</b>
+
+    Additionally downlod browsers.json file into you project use this command:
+
+    <b>curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/browsers.json -o browsers.json</b>
+
+    Manually pull docker images with specific versions from browsers.json:
+
+    docker pull selenoid/vnc:chrome_102.0
+    docker pull selenoid/vnc:chrome_101.0
+    docker pull selenoid/vnc:firefox_101.0
+    docker pull selenoid/vnc:chrome_100.0
 </pre>
 To work with Healenium and standard Selenium hub with nodes, use:</br>
 <pre>
