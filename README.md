@@ -18,10 +18,10 @@ To work with Healenium and Selenoid plus Selenoid Ui, use:</br>
 
     Manually pull docker images with specific versions from browsers.json:
 
-    docker pull selenoid/vnc:chrome_102.0
-    docker pull selenoid/vnc:chrome_101.0
-    docker pull selenoid/vnc:firefox_101.0
-    docker pull selenoid/vnc:chrome_100.0
+    <b>docker pull selenoid/vnc:chrome_102.0</b>
+    <b>docker pull selenoid/vnc:chrome_101.0</b>
+    <b>docker pull selenoid/vnc:firefox_101.0</b>
+    <b>docker pull selenoid/vnc:chrome_100.0</b>
 </pre>
 To work with Healenium and standard Selenium hub with nodes, use:</br>
 <pre>
