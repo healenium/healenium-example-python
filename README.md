@@ -66,9 +66,9 @@ To work with Healenium and Selenoid plus Selenoid Ui, use:</br>
 To work with Healenium and standard Selenium hub with nodes, use:</br>
 
 <pre>
-    To download docker-compose-selenium-v3.yaml file into your project use this command:
+    To download docker-compose-selenium-grid.yaml file into your project use this command:
 
-    <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose-selenium-v3.yaml -o docker-compose-selenium-v3.yaml</b>
+    <b>$ curl https://raw.githubusercontent.com/healenium/healenium-example-python/master/infra/docker-compose-selenium-grid.yaml -o docker-compose-selenium-grid.yaml</b>
 
     Example project structure:
 
@@ -77,11 +77,11 @@ To work with Healenium and standard Selenium hub with nodes, use:</br>
                 |__db
                     |__sql
                         |__init.sql
-                |__docker-compose-selenium-v3.yaml
+                |__docker-compose-selenium-grid.yaml
 
-    Command to run docker-compose-selenium-v3.yaml
+    Command to run docker-compose-selenium-grid.yaml
 
-        <b>docker-compose -f docker-compose-selenium-v3.yaml up -d</b>
+        <b>docker-compose -f docker-compose-selenium-grid.yaml up -d</b>
 
     <b>ATTENTION</b>
     Verify the next images are <b>Up</b> and <b>Running</b>
