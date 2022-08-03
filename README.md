@@ -82,3 +82,9 @@ You can monitor tests running if you using Healenium with Selenoid plus Selenoid
 ```sh
 http://localhost:8080
 ```
+
+## Community / Support
+
+* [Telegram chat](https://t.me/healenium)
+* [YouTube Channel](https://www.youtube.com/channel/UCsZJ0ri-Hp7IA1A6Fgi4Hvg)
+
