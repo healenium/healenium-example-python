@@ -19,7 +19,9 @@ Python 3.9.5 + Pytest project with healenium usage example
 
 Go into healenium folder
 
-```cd healenium``` 
+```sh
+cd healenium
+``` 
 
 #### Run Healenium with Selenoid:
 
