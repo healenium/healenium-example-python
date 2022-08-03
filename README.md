@@ -42,9 +42,6 @@ docker-compose up -d
 docker-compose -f docker-compose-selenium-grid.yaml up -d
 ```
 
-
-To work with Healenium and Selenoid plus Selenoid Ui, use:</br>
-
 <b>ATTENTION</b>
 
 Verify the next images are <b>Up</b> and <b>Running</b>
