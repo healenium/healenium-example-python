@@ -54,19 +54,31 @@ Verify the next images are <b>Up</b> and <b>Running</b>
 ### 2. Run test
 To run tests in terminal with pytest you need to go to execute next commands:
 
-``python3 -m venv env``
+```sh
+python3 -m venv env
+```
 
-``source ./env/bin/activate``
+```sh
+source ./env/bin/activate
+```
 
-``python -m pip install -U pytest``
+```sh
+python -m pip install -U pytest
+```
 
-``python -m pip install -U selenium``
+```sh
+python -m pip install -U selenium
+```
 
-``python -m pytest ./tests/``
+```sh
+python -m pytest ./tests/
+```
 
 > If you want to execute tests from specified file, please use the command: ```python -m pytest ./tests/test_css.py```
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 3. Monitoring tests running
 You can monitor tests running if you using Healenium with Selenoid plus Selenoid Ui, go to:</br>
-```http://localhost:8080```
+```sh
+http://localhost:8080
+```
