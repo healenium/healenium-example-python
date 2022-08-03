@@ -68,7 +68,5 @@ To run tests in terminal with pytest you need to go to execute next commands:
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
 ### 3. Monitoring tests running
-You can monitor tests running if you using Healenium with Selenoid plus Selenoid Ui, use:</br>
-<pre>
-    go to <b>http://localhost:8080</b>
-</pre>
+You can monitor tests running if you using Healenium with Selenoid plus Selenoid Ui, go to:</br>
+```http://localhost:8080```
