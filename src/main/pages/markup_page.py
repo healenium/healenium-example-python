@@ -29,12 +29,12 @@ class MarkupPage(BasePage):
         return self
 
     def generate_markup(self):
-        generate_markup = self.driver.find_element_by_id(self.generate_markup_btn_id)
+        generate_markup = self.driver.find_element(By.ID, self.generate_markup_btn_id)
         generate_markup.click()
         return self
 
     def click_test_button(self):
-        self.driver.find_element_by_class_name(self.test_button).click()
+        self.driver.find_element(By.CLASS_NAME, self.test_button).click()
 
     def close(self):
         self.driver.quit()

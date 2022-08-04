@@ -18,7 +18,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.2.3
+    image: healenium/hlm-backend:${BACK_VERSION}
     container_name: healenium
     restart: on-failure
     ports:
@@ -44,7 +44,7 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:1.0.0
+    image: healenium/hlm-proxy:${PROXY_VERSION}
     container_name: hlm-proxy
     restart: on-failure
     ports:
