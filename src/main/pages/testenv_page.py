@@ -33,11 +33,11 @@ class TestEnvPage(BasePage):
         return self
 
     def click_form_submit_btn(self):
-        self.driver.find_element_by_id(self.submit_form_btn).click()
+        self.driver.find_element(By.ID, self.submit_form_btn).click()
         return self
 
     def click_submit_btn(self):
-        self.driver.find_element_by_id(self.submit_btn).click()
+        self.driver.find_element(By.ID, self.submit_btn).click()
         return self
 
     def select_checkboxes_under_parent(self):
