@@ -9,9 +9,11 @@ Python 3.9.5 + Pytest project with healenium usage example
 * [Healenium with Selenoid](#run-healenium-with-selenoid)
 * [Healenium with Selenium-Grid](#run-healenium-with-selenium-grid)
 
-[2. Run test](#2-run-test)
+[2. Configuration RemoteWebDriver for Healenium](#2-configuration-remotewebdriver-for-healenium)
 
-[3. Monitoring tests running](#3-monitoring-tests-running)
+[3. Run test](#3-run-test)
+
+[4. Monitoring tests running](#4-monitoring-tests-running)
 
 ## How to start
 
@@ -53,7 +55,24 @@ Verify the next images are <b>Up</b> and <b>Running</b>
 - `selector imitator` (Convert healed locator to convenient format)
 - `selenoid`/`selenium-grid` (Selenium server)
 
-### 2. Run test
+### 2. Configuration RemoteWebDriver for Healenium
+
+To run using Healenium create RemoteWebDriver with URL ```http://<remote webdriver host>:8085```:
+
+```py
+    nodeURL = "http://localhost:8085"
+    
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+    
+    current_webdriver = webdriver.Remote(
+        command_executor=nodeURL,
+        desired_capabilities=webdriver.DesiredCapabilities.CHROME,
+        options=options,
+    )
+```
+
+### 3. Run test
 To run tests in terminal with pytest you need to go to execute next commands:
 
 ```sh
@@ -79,7 +98,7 @@ python -m pytest ./tests/
 > If you want to execute tests from specified file, please use the command: ```python -m pytest ./tests/test_css.py```
 >> In case you want to run all tests in project use ```python -m pytest ./tests/``` command
 
-### 3. Monitoring tests running
+### 4. Monitoring tests running
 You can monitor tests running if you using Healenium with Selenoid plus Selenoid Ui, go to:</br>
 ```sh
 http://localhost:8080
