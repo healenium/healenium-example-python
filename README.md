@@ -51,7 +51,7 @@ docker-compose -f docker-compose-selenium-grid.yaml up -d
 Verify the next images are <b>Up</b> and <b>Running</b>
 - `postgres-db` (PostgreSQL database to store etalon selector / healing / report)
 - `hlm-proxy` (Proxy client request to Selenium server)
-- `hlm-bacand` (CRUD service)
+- `hlm-backend` (CRUD service)
 - `selector imitator` (Convert healed locator to convenient format)
 - `selenoid`/`selenium-grid` (Selenium server)
 
@@ -60,16 +60,13 @@ Verify the next images are <b>Up</b> and <b>Running</b>
 To run using Healenium create RemoteWebDriver with URL ```http://<remote webdriver host>:8085```:
 
 ```py
-    nodeURL = "http://localhost:8085"
-    
     options = webdriver.ChromeOptions()
     options.add_argument('--no-sandbox')
-    
-    current_webdriver = webdriver.Remote(
-        command_executor=nodeURL,
+    options.add_argument("--disable-dev-shm-usage")
+    self.driver = webdriver.Remote(
+        command_executor="http://localhost:8085",
         desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-        options=options,
-    )
+        options=options)
 ```
 
 ### 3. Run test
