@@ -60,13 +60,8 @@ Verify the next images are <b>Up</b> and <b>Running</b>
 To run using Healenium create RemoteWebDriver with URL ```http://<remote webdriver host>:8085```:
 
 ```py
-    options = webdriver.ChromeOptions()
-    options.add_argument('--no-sandbox')
-    options.add_argument("--disable-dev-shm-usage")
-    self.driver = webdriver.Remote(
-        command_executor="http://localhost:8085",
-        desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-        options=options)
+        options = webdriver.ChromeOptions()
+        self.driver = webdriver.Remote('http://localhost:8085', options=options)
 ```
 
 ### 3. Run test
@@ -89,7 +84,7 @@ python -m pip install -U selenium
 ```
 
 ```sh
-python -m pytest ./tests/
+pytest
 ```
 
 > If you want to execute tests from specified file, please use the command: ```python -m pytest ./tests/test_css.py```

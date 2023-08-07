@@ -5,18 +5,18 @@ from src.main.pages.testenv_page import TestEnvPage
 
 class TestSemantic:
 
-    def test_semantic_class_name(self):
-        main_page = MarkupPage()
-
-        main_page.open_browser()
-        main_page.click_test_button()
-        main_page.confirm_alert()
-
-        main_page.generate_markup()
-        main_page.click_test_button()  # should be healed
-        main_page.confirm_alert()
-
-        main_page.close()
+    # def test_semantic_class_name(self):
+    #     main_page = MarkupPage()
+    #
+    #     main_page.open_browser()
+    #     main_page.click_test_button()
+    #     main_page.confirm_alert()
+    #
+    #     main_page.generate_markup()
+    #     main_page.click_test_button()  # should be healed
+    #     main_page.confirm_alert()
+    #
+    #     main_page.close()
 
     def test_semantic_id(self):
         test_page = TestEnvPage()

@@ -16,12 +16,7 @@ class CallbackPage(BasePage):
 
     def __init__(self):
         options = webdriver.ChromeOptions()
-        options.add_argument('--no-sandbox')
-        options.add_argument("--disable-dev-shm-usage")
-        self.driver = webdriver.Remote(
-            command_executor="http://localhost:8085",
-            desired_capabilities=webdriver.DesiredCapabilities.CHROME,
-            options=options)
+        self.driver = webdriver.Remote('http://localhost:8085', options=options)
 
     def open_browser(self):
         self.driver.get(BasePage.callbackTestPageUrl)
