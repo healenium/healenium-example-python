@@ -18,7 +18,7 @@ services:
       - healenium
 
   healenium:
-    image: healenium/hlm-backend:3.2.3
+    image: healenium/hlm-backend:3.3.4
     container_name: healenium
     restart: on-failure
     ports:
@@ -31,11 +31,14 @@ services:
       - SPRING_POSTGRES_USER=healenium_user
       - SPRING_POSTGRES_PASSWORD=YDk2nmNs4s9aCP6K
       - SPRING_POSTGRES_DB_HOST=postgres-db
+      - KEY_SELECTOR_URL=false
+      - COLLECT_METRICS=true
+      - HLM_LOG_LEVEL=info
     networks:
       - healenium
 
   selector-imitator:
-    image: healenium/hlm-selector-imitator:1.1
+    image: healenium/hlm-selector-imitator:1.2
     container_name: selector-imitator
     restart: on-failure
     ports:
@@ -44,7 +47,7 @@ services:
       - healenium
 
   hlm-proxy:
-    image: healenium/hlm-proxy:1.1.0
+    image: healenium/hlm-proxy:1.3.4
     container_name: hlm-proxy
     restart: on-failure
     ports:
@@ -53,10 +56,12 @@ services:
       - RECOVERY_TRIES=1
       - SCORE_CAP=.6
       - HEAL_ENABLED=true
-      - SELENIUM_HOST=hlm-selenoid
-      - HEALENIUM_HOST=healenium
-      - IMITATE_HOST=selector-imitator
-      - SELENIUM_URL=/wd/hub
+      - SELENIUM_SERVER_URL=http://hlm-selenoid:4444/wd/hub
+      - APPIUM_SERVER_URL=http://host.docker.internal:4723/wd/hub
+      - HEALENIUM_SERVER_URL=http://localhost:7878
+      - HEALENIUM_SERVICE=http://healenium:7878
+      - IMITATE_SERVICE=http://selector-imitator:8000
+      - HLM_LOG_LEVEL=info
     networks:
       - healenium
 
