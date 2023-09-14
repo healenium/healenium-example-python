@@ -6,8 +6,9 @@
 Python 3.9.5 + Pytest project with healenium usage example 
 
 [1. Start Healenium components](#1-start-healenium-components)
-* [Healenium with Selenoid](#run-healenium-with-selenoid)
 * [Healenium with Selenium-Grid](#run-healenium-with-selenium-grid)
+* [Healenium with Selenoid](#run-healenium-with-selenoid)
+
 
 [2. Configuration RemoteWebDriver for Healenium](#2-configuration-remotewebdriver-for-healenium)
 
@@ -23,27 +24,28 @@ Go into healenium folder
 
 ```sh
 cd healenium
-``` 
+```
 
-#### Run Healenium with Selenoid:
+#### Run Healenium with Selenium-Grid:
+```sh
+docker-compose up -d
+```
+
+#### Run Healenium with Selenoid
 
 > Note: `browsers.json` consists of target browsers and appropriate versions.
 > Before run healenium you have to manually pull selenoid browser docker images with version specified in browsers.json
 
 Example pull selenoid chrome image:
 ```sh
-docker pull selenoid/vnc:chrome_102.0
+docker pull selenoid/vnc:chrome_111.0
 ```
 Full list of browser images you can find [here](https://hub.docker.com/u/selenoid)
 
+
 Run healenium with Selenoid:
 ```sh
-docker-compose up -d
-```
-
-#### Run Healenium with Selenium-Grid:
-```sh
-docker-compose -f docker-compose-selenium-grid.yaml up -d
+docker-compose -f docker-compose-selenoid.yaml up -d
 ```
 
 <b>ATTENTION</b>
