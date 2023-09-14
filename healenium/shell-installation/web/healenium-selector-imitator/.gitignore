@@ -1,6 +1,0 @@
-env
-.idea
-__pycache__
-.coverage
-htmlcov
-dist
