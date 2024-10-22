@@ -2,9 +2,11 @@ import logging
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 
 from src.main.pages.base_page import BasePage
 from src.main.search.context import Context
+from selenium.webdriver.support import expected_conditions as ec
 
 
 class TestEnvPage(BasePage):
@@ -47,6 +49,18 @@ class TestEnvPage(BasePage):
         logging.info("Find element By ")
         result = Context().set_strategy(self.driver, locator_type).execute_strategy(selector)
         assert result == True
+
+    def click_wait_btn(self):
+        self.driver.find_element(By.ID, "Wait_Submit").click()
+
+    def disable_healing_true(self):
+        self.driver.execute_script("disable_healing_true")
+
+    def disable_healing_false(self):
+        self.driver.execute_script("disable_healing_false")
+
+    def click_test_button_wait(self, seconds):
+        WebDriverWait(self.driver, seconds).until(ec.visibility_of_element_located((By.ID, "wait_new_element")))
 
     def close(self):
         self.driver.quit()

@@ -1,21 +1,15 @@
-# from src.main.pages.markup_page import MarkupPage
-#
-#
-# class TestWait:
-#
-#     # def test_conditional_wait(self):
-#     #     markup_page=MarkupPage()
-#     #
-#     #     markup_page.open_browser()
-#     #     markup_page.click_test_button()
-#     #     markup_page.confirm_alert()
-#     #
-#     #     markup_page.generate_markup()
-#     #     markup_page.click_test_button() #should be healed
-#     #     markup_page.confirm_alert()
-#     #
-#     #     # markup_page.generate_markup()
-#     #     # markup_page.click_test_button_wait(5) #should be healed
-#     #     # markup_page.confirm_alert()
-#     #
-#     #     markup_page.close()
+from src.main.pages.testenv_page import TestEnvPage
+
+
+class TestWait:
+
+    def test_conditional_wait(self):
+        test_page = TestEnvPage()
+
+        test_page.open_browser()
+        test_page.click_wait_btn()
+        test_page.disable_healing_true()
+        test_page.click_test_button_wait(10)
+        test_page.disable_healing_false()
+
+        test_page.close()

@@ -10,13 +10,17 @@ class CallbackPage(BasePage):
     remove_square_button = '//button[contains(@class, "remove")]'
 
     test_button = '//custom-square[contains(@c, "red")]'
-    test_button_css = '[c="red"]'
+    test_button_css = '[color="red"]'
 
     driver: webdriver
 
     def __init__(self):
         options = webdriver.ChromeOptions()
-        self.driver = webdriver.Remote('http://localhost:8085', options=options)
+        options.add_argument('--no-sandbox')
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Remote(
+            command_executor="http://localhost:8085",
+            options=options)
 
     def open_browser(self):
         self.driver.get(BasePage.callbackTestPageUrl)

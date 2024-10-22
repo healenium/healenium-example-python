@@ -66,6 +66,14 @@ To run using Healenium create RemoteWebDriver with URL ```http://<remote webdriv
         self.driver = webdriver.Remote('http://localhost:8085', options=options)
 ```
 
+To temporarily disable the healing mechanism for certain sections of your code, use the following syntax:
+
+```py
+        self.driver.execute_script("disable_healing_true")
+        ... // Your code that does not require healing
+        self.driver.execute_script("disable_healing_false")
+```
+
 ### 3. Run test
 To run tests in terminal with pytest you need to go to execute next commands:
 
