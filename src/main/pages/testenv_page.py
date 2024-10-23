@@ -53,14 +53,11 @@ class TestEnvPage(BasePage):
     def click_wait_btn(self):
         self.driver.find_element(By.ID, "Wait_Submit").click()
 
-    def disable_healing_true(self):
-        self.driver.execute_script("disable_healing_true")
+    def execute_script(self, script):
+        self.driver.execute_script(script)
 
-    def disable_healing_false(self):
-        self.driver.execute_script("disable_healing_false")
-
-    def click_test_button_wait(self, seconds):
-        WebDriverWait(self.driver, seconds).until(ec.visibility_of_element_located((By.ID, "wait_new_element")))
+    def click_test_button_wait(self):
+        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located((By.ID, "wait_new_element")))
 
     def close(self):
         self.driver.quit()
